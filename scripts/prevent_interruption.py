@@ -1,5 +1,5 @@
 import gradio as gr
-from modules import script_callbacks, shared
+from modules import script_callbacks, shared, ui_extensions
 
 preventInterruption: bool = False
 
@@ -23,6 +23,10 @@ def hijack():
     if hasattr(shared.state, 'stop_generating'):
         shared.state.stop_generating = hijackOne(shared.state.stop_generating)
     shared.state.skip = hijackOne(shared.state.skip)
+
+    ui_extensions.apply_and_restart = hijackOne(ui_extensions.apply_and_restart)
+    shared.state.request_restart = hijackOne(shared.state.request_restart)
+
 
 hijack()
 

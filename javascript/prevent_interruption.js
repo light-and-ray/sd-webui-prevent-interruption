@@ -38,3 +38,23 @@ function prevent_interruption_fetch() {
 }
 
 setInterval(prevent_interruption_fetch, 5000);
+
+
+function prevent_interruption_hijackOne(oldFunction) {
+    newFunction = (...args) => {
+        let input = gradioApp().querySelector('.prevent_interruption_checkbox input');
+        if (input?.checked) {
+            console.log("Interruptions are blocked");
+            return Array.from(args);
+        } else {
+            return oldFunction.apply(null, args);
+        }
+    };
+    return newFunction;
+}
+
+
+onUiLoaded(function () {
+    restart_reload = prevent_interruption_hijackOne(restart_reload);
+    extensions_apply = prevent_interruption_hijackOne(extensions_apply);
+});
