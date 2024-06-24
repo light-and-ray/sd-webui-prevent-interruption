@@ -20,5 +20,4 @@ onUiUpdate(function () {
     footer.appendChild(label);
 
     prevent_interruption_registered = true;
-    console.log('!!! registered');
 });
