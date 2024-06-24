@@ -17,12 +17,13 @@
     top: -4px;
     left: auto;
     right: 14px;
+
     @media (max-width: 870px) {
         position: relative;
         right: auto;
         left: 138px;
+		top: 6px;
     }
-
 }
 
 .prevent_interruption_label:after {
