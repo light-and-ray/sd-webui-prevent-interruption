@@ -1,19 +1,19 @@
 .prevent_interruption_checkbox input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
+    height: 0;
+    width: 0;
+    visibility: hidden;
 }
 
 .prevent_interruption_label {
-	cursor: pointer;
-	text-indent: -200px;
+    cursor: pointer;
+    text-indent: -200px;
     line-height: 32px;
-	width: 64px;
-	height: 36px;
-	background: grey;
-	display: block;
-	border-radius: 36px;
-	position: absolute;
+    width: 64px;
+    height: 36px;
+    background: grey;
+    display: block;
+    border-radius: 36px;
+    position: absolute;
     top: -4px;
     left: auto;
     right: 14px;
@@ -22,31 +22,31 @@
         position: relative;
         right: auto;
         left: 138px;
-		top: 6px;
+        top: 6px;
     }
 }
 
 .prevent_interruption_label:after {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 26px;
-	height: 26px;
-	background: #fff;
-	border-radius: 26px;
-	transition: 0.3s;
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 26px;
+    transition: 0.3s;
 }
 
 .prevent_interruption_label.checked {
-	background: #da5555;
+    background: #da5555;
 }
 
 .prevent_interruption_label.checked:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
 }
 .prevent_interruption_label:active:after {
-	width: 42px;
+    width: 42px;
 }
 
