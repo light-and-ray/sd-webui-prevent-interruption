@@ -21,3 +21,20 @@ onUiUpdate(function () {
 
     prevent_interruption_registered = true;
 });
+
+
+function prevent_interruption_fetch() {
+    let button = gradioApp().getElementById('prevent_interruption_fetch_button');
+    let input = gradioApp().querySelector('.prevent_interruption_checkbox input');
+    let label = gradioApp().getElementById('prevent_interruption_label');
+    if (!button || !input || !label) return;
+
+    button.click();
+    if (input.checked) {
+        label.classList.add('checked');
+    } else {
+        label.classList.remove('checked');
+    }
+}
+
+setInterval(prevent_interruption_fetch, 5000);

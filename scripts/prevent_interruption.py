@@ -12,8 +12,9 @@ def hijackOne(oldFunction):
     def newFunction(*args, **kwargs):
         if preventInterruption:
             warn()
+            return None
         else:
-            oldFunction(*args, **kwargs)
+            return oldFunction(*args, **kwargs)
     return newFunction
 
 
@@ -43,8 +44,9 @@ def beforeFooter(component, **kwargs):
                        'for="prevent_interruption_input" '
                        'class="prevent_interruption_label"'
                 '>Prevent interruption</label>')
+        fetchPreventInterruption = gr.Button(visible=False, elem_id='prevent_interruption_fetch_button')
     prevent_interruption.change(fn=setPreventInterruption, inputs=[prevent_interruption], outputs=[], show_progress=False)
-    block.load(fn=lambda: preventInterruption, inputs=[], outputs=[prevent_interruption], show_progress=False)
+    fetchPreventInterruption.click(fn=lambda: preventInterruption, inputs=[], outputs=[prevent_interruption], show_progress=False)
 
 script_callbacks.on_before_component(beforeFooter)
 
