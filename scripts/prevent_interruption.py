@@ -42,7 +42,8 @@ def beforeFooter(component, **kwargs):
     with gr.Blocks(elem_id='prevent_interruption_block') as block:
         prevent_interruption = gr.Checkbox(False, label='',
             elem_id='prevent_interruption_checkbox',
-            elem_classes=['prevent_interruption_checkbox']
+            elem_classes=['prevent_interruption_checkbox'],
+            visible=False,
         )
         gr.HTML('<label id="prevent_interruption_label" '
                        'for="prevent_interruption_input" '

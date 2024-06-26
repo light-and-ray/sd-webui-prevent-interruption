@@ -1,8 +1,3 @@
-.prevent_interruption_checkbox input[type=checkbox]{
-    height: 0;
-    width: 0;
-    visibility: hidden;
-}
 
 .prevent_interruption_label {
     cursor: pointer;
