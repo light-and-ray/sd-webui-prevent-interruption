@@ -29,7 +29,8 @@ function prevent_interruption_fetch() {
     let label = gradioApp().getElementById('prevent_interruption_label');
     if (!button || !input || !label) return;
 
-    button.click();
+    button.dispatchEvent(new Event("click"));
+
     if (input.checked) {
         label.classList.add('checked');
     } else {
